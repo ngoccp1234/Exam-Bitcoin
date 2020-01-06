@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 input-group">
+        <h2>Login Form</h2>
+        <br />
+        @using (Html.BeginForm("ProcessLogin", "Users", FormMethod.Post))
+        {
+            <div class="row input-group">
+
+                <div class="col-md-5">
+                    <label>UserName</label>
+                    <input type="text" name="userName" value="" />
+                </div>
+            </div>
+            <br />
+            <div class="row input-group">
+                <div class="col-md-5">
+                    <label>Password</label>
+                    <input type="password" name="password" value="" />
+                </div>
+            </div>
+            <br />
+            <div class="row input-group">
+                <div class="col-md-5">
+                    <input type="submit" name="Submit" value="submit" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-4"></div>
+    <br />
+    @Html.ActionLink("Register Account", "Register", "Users")
+</div>
+
+   
+
+

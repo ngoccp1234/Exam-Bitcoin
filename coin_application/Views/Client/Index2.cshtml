@@ -1,0 +1,63 @@
+﻿@using coin_application.Models
+@model IEnumerable<coin_application.Models.Coin>
+
+
+@{
+    ViewBag.Title = "Home Page";
+    var currentCategory = ViewData["market"] as Market;
+    if (currentCategory == null)
+    {
+        currentCategory = new Market();
+    }
+}
+
+<h2>@currentCategory.MarketName</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Name Market
+        </th>
+        <th>
+            Name Coin
+        </th>
+        <th>
+            Base Asset
+        </th>
+        <th>
+            Quote Asset
+        </th>
+        <th>
+            Last Price
+        </th>
+        <th>
+            Volume 24h
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Market.MarketName
+            </td>
+            <td>
+                @item.CoinName
+            </td>
+            <td>
+                @item.BaseAsset
+            </td>
+            <td>
+                @item.QuoteAsset
+            </td>
+            <td>
+                @item.LastPrice
+            </td>
+            <td>
+                @item.Volume24h
+            </td>
+        </tr>
+    }
+
+</table>
+

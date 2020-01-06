@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "AddRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddRole</h2>
+
+@using (Html.BeginForm("ProcessRole", "Roles", FormMethod.Post))
+{
+    <div>
+        Role Name <input type="text" name="roleName" value="" />
+                  <input type="submit" name="Submit" value="submit" />
+    </div>
+}
+
